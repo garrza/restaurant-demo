@@ -4,7 +4,7 @@ const createMenu = () => {
 
     menu.appendChild(createMenuItem("Poop","Delicious, homemade, poop"));
     menu.appendChild(createMenuItem("Pizza", "Pizza, a la Bertram!"));
-    return { menu };
+    return menu;
 }
 
 const createMenuItem = (name, description) => {
@@ -25,7 +25,7 @@ const createMenuItem = (name, description) => {
     menuItem.appendChild(foodName);
     menuItem.appendChild(foodDescription);
 
-    return { menuItem };
+    return menuItem;
 }
 
 const loadMenu = () => {

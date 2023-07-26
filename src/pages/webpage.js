@@ -6,14 +6,15 @@ const createHeader = () => {
     const header = document.createElement("header");
     header.classList.add("header");
 
-    const restaurantName = document.createElement("h1");
-    restaurantName.classList.add("restaurant-name");
-    restaurantName.textContent = "Big Cesar Navarro";
+    const restaurantLogo = document.createElement("img");
+    restaurantLogo.src = "assets/images/cesar.png";
+    restaurantLogo.alt = "logo";
+    restaurantLogo.classList.add("restaurant-image");
 
-    header.appendChild(restaurantName);
+    header.appendChild(restaurantLogo);
     header.appendChild(createNav());
-    
-    return { header }
+
+    return header
 }
 
 const createNav = () => {
@@ -51,17 +52,59 @@ const createNav = () => {
     nav.appendChild(menuButton);
     nav.appendChild(aboutButton);
 
-    return { nav }
+    return nav;
 }
 
-const setActiveButton = () => {
+const setActiveButton = (selectedButton) => {
     const buttons = document.querySelectorAll(".button-nav");
 
     buttons.forEach((button) => {
-        if (button !== this){
+        if (button !== selectedButton) {
             button.classList.remove("active");
         }
     });
 
-    button.classList.add("active");
+    selectedButton.classList.add("active");
 }
+
+const createMain = () => {
+    const main = document.createElement("main");
+    main.classList.add("main");
+    main.setAttribute("id", "main");
+
+    return main;
+}
+
+const createFooter = () => {
+    const footer = document.createElement("footer");
+    footer.classList.add("footer");
+
+    const copyright = document.createElement("p");
+    copyright.textContent = `Copyright © ${new Date().getFullYear()} @garrza`;
+
+    const githubLink = document.createElement("a");
+    githubLink.href = "https://github.com/garrza";
+
+    const githubIcon = document.createElement("i");
+    githubIcon.classList.add("fab");
+    githubIcon.classList.add("fa-github");
+
+    githubLink.appendChild(githubIcon);
+    footer.appendChild(copyright);
+    footer.appendChild(githubLink);
+
+    return footer;
+}
+
+const initialize = () => {
+    const content = document.getElementById("content");
+
+    content.appendChild(createHeader());
+    content.appendChild(createMain());
+    content.appendChild(createFooter());
+
+    setActiveButton(document.querySelector(".button-nav"));
+    loadHome();
+}
+
+export default initialize;

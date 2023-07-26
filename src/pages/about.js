@@ -12,11 +12,11 @@ const createAbout = () => {
     restaurantLocation.src = "assets/images/location.png";
     restaurantLocation.alt = "Big Cesar Navarro";
     
-    contact.appendChild(phoneNumber);
-    contact.appendChild(address);
-    contact.appendChild(restaurantLocation);
+    about.appendChild(phoneNumber);
+    about.appendChild(address);
+    about.appendChild(restaurantLocation);
 
-    return { about };
+    return about;
 }
 
 const loadAbout = () => {

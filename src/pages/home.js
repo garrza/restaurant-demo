@@ -10,22 +10,23 @@ const createHome = () => {
     home.appendChild(dimensionCesar);
     home.appendChild(createParagraph("The pizza from the future"));
     home.appendChild(createParagraph("Made with passion since tomorrow!"));
+    
+    return home;
 };
 
 const createHeader = (text) => {
     const header = document.createElement("h1");
     header.textContent = text;
     header.classList.add("header");
-    return { header };
+    return header;
 };
 
 const createParagraph = (text) => {
     const paragraph = document.createElement("p");
     paragraph.textContent = text;
     paragraph.classList.add("info");
-    return { paragraph };
+    return paragraph;
 };
-
 
 const loadHome = () => {
     const main = document.getElementById("main");
