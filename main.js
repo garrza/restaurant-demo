@@ -1,0 +1,1 @@
+(()=>{"use strict";function e(){console.log("I will get called from print.js!")}const n=(()=>{const n=document.createElement("button");return n.innerHTML="Click me and check the console!",n.onclick=e,n})();document.querySelector(".content").appendChild(n)})();
