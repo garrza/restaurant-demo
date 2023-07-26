@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'LittleCesar';
+    src: url('assets/fonts/LittleCaesar.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    --main-light: #fafafa;
+    --secondary-light: #e4e5f1;
+    --cesar: #ff671d;
+    --main-dark: #2E282A;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: LittleCesar;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main-light);
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 100px;
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+}
+
+/* --- --- --- --- --- HEADER --- --- --- --- --- --- */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    grid-area: header;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.restaurant-image {
+    margin-bottom: 1rem;
+    max-width: 5rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
