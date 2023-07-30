@@ -25,6 +25,19 @@ html {
     padding: 0;
 }
 
+button {
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
 body {
     background-color: var(--main-light);
     display: grid;
@@ -56,5 +69,20 @@ body {
 
 .nav {
     display: flex;
-    justify-content: space-around;
+    gap: 1rem;
+}
+
+.button-nav{
+    color: var(--main-light);
+    background-color: var(--cesar);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.button-nav.active{
+    background-color: var(--main-dark);
+}
+.button-nav:hover,
+.active {
+    background-color: var(--main-dark);
 }
